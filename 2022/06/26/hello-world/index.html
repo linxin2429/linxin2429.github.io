@@ -20,18 +20,10 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
-    
-<link rel="stylesheet" href="/css/plugins/gitment.css">
-
-  
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
   
-  
-    
-<script src="/js/gitment.js"></script>
-
   
   
   
@@ -220,9 +212,7 @@
     
     <!-- 二维码 END -->
     
-      <!-- Gitment START -->
-      <div id="comments"></div>
-      <!-- Gitment END -->
+      <!-- No Comment -->
     
   </article>
   <!-- Article END -->
@@ -292,34 +282,6 @@
 
 
 
-
-  <script>
-    var gitmentConfig = "linxin2429";
-    if (gitmentConfig !== 'undefined') {
-      var gitment = new Gitment({
-        id: "Hello World",
-        owner: "linxin2429",
-        repo: "linxin2429.github.io",
-        oauth: {
-          client_id: "13a83cdd1932e17b5a69",
-          client_secret: "ea860aa401ed6de135404cf10f98c504db75ce2f"
-        },
-        theme: {
-          render(state, instance) {
-            const container = document.createElement('div')
-            container.lang = "en-US"
-            container.className = 'gitment-container gitment-root-container'
-            container.appendChild(instance.renderHeader(state, instance))
-            container.appendChild(instance.renderEditor(state, instance))
-            container.appendChild(instance.renderComments(state, instance))
-            container.appendChild(instance.renderFooter(state, instance))
-            return container;
-          }
-        }
-      })
-      gitment.render(document.getElementById('comments'))
-    }
-  </script>
 
 
 
