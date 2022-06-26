@@ -10,7 +10,7 @@
   
   <title>
     
-      Linxin
+      dubbo源码阅读第1节 | Linxin
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -176,42 +176,133 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">Archives</p>
+  <h2>dubbo源码阅读第1节</h2>
+  <p class="post-date">2022-06-26</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2022
-  </h1>
-  <div class="section-list">
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1></section>
+    <!-- Tags START -->
     
-    
-      <div class="section-list-item">
-        <a href="/2022/06/26/dubbo%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%AC1%E8%8A%82/" class="archive-title">dubbo源码阅读第1节</a>
-        <p class="archive-date">06-26</p>
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Dubbo" >
+    <span class="tag-code">Dubbo</span>
+  </a>
+
+  <a href="/tags#源码阅读" >
+    <span class="tag-code">源码阅读</span>
+  </a>
+
+  <a href="/tags#技术" >
+    <span class="tag-code">技术</span>
+  </a>
+
       </div>
     
-      <div class="section-list-item">
-        <a href="/2022/06/26/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">06-26</p>
-      </div>
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2022/06/26/hello-world/">
+        <span class="nav-arrow">← </span>
+        
+          Hello World
+        
+      </a>
+    
     
   </div>
-</section>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
   
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-nav-text">测试</span></a></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
-    var url = 'https://linxin2429.github.io/archives/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    var url = 'https://linxin2429.github.io/2022/06/26/dubbo源码阅读第1节/';
+    var banner = 'https://github.com/linxin2429/linxin2429.github.io/blob/main/pic/3.png?raw=true'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
   })();
 </script>
+
+
+
+
+
+
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
